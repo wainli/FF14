@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<TriggernometryExport PluginVersion="1.2.0.6">
+  <ExportedFolder Id="09e5da22-81e1-47ae-8577-f3493a931158" Name="Local triggers" Enabled="true">
+    <Folders>
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2097152" Id="870820f0-2219-4152-a990-f64e6b117742" Name="龙骑" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="贯通刺/前冲刺" Id="4e40ee74-fa4b-45bb-940a-a65add8885e5" RegularExpression="^.{14} \w{12} 15:.{8}:(?&lt;CasterName&gt;[^:]+?):(.+:贯通刺|.+:前冲刺)">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 直刺 1 3" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${_ffxivplayer}" ExpressionTypeL="String" ExpressionR="${CasterName}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+          <Trigger Enabled="true" Name="精准刺/龙眼雷电" Id="7eca53a9-2d90-4170-ada8-42a9625f5fb0" RegularExpression="^.{14} \w{12} 15:.{8}:瑠璃:(.+:精准刺|.+:龙眼雷电)">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 开膛枪 1 3" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 贯通刺 1 2" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="开膛枪/螺旋击" Id="996f510c-0c9d-4c12-a866-47c93a7e8f25" RegularExpression="^.{14} \w{12} 15:.{8}:瑠璃:(.+:开膛枪|.+:螺旋击)">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 樱花怒放 1 2" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2199023255552" Id="967f9ab8-96e7-404f-8d83-6b7c348d4b55" Name="绘灵法师" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="动物彩绘" Id="fe59160c-5d61-40a9-94ce-85c5e8804606" RegularExpression="^.{14} [a-zA-Z]+ 1[56]:.{8}:瑠璃:(.+:绒球彩绘|.+:翅膀彩绘|.+:兽爪彩绘|.+:尖牙彩绘)">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 动物构想 1 8" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="动物构想" Id="058f4453-b9e0-453e-aff9-7eeec22fc4b7" RegularExpression="^.{14} [a-zA-Z]+ 1[56]:.{8}:瑠璃:(.+:绒球构想|.+:翅膀构想|.+:兽爪构想|.+:尖牙构想)">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 动物彩绘 1 8" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="武器彩绘" Id="583895f7-a086-45d2-bf87-fcc43d765764" RegularExpression="^.{14} \w{12} 15:.{8}:瑠璃:.+:重锤彩绘">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 武器构想 1 9" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="重锤构想" Id="866c7706-f68b-4276-bf8b-b23391bfd7ef" RegularExpression="^.{14} \w{12} 15:.{8}:瑠璃:.+:重锤构想">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 重锤敲章 1 9" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="重锤连击" Id="8008b922-7bad-4d14-8ddd-87ca42b3eed4" RegularExpression="^.{14} \w{12} 1E:E60:重锤连击:0.00:.{8}:瑠璃">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 武器彩绘 1 9" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="减色混合" Id="a313be26-c786-46ef-9181-444273201f32" RegularExpression="^.{14} \w{9} 1A:E5A:减色混合:.{7}:(.{8}:瑠璃:)+03">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 冰结之蓝青 1 1" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 冰冻之蓝青 1 2" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="非减色混合" Id="2aa980a5-df95-4275-adfc-d767a3da187e" RegularExpression="^.{14} \w{12} 1E:E5A:减色混合:.{4}:(.{8}:瑠璃:)+">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 火炎之红 1 1" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 烈炎之红 1 2" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="非色调反转" Id="271bb037-1b47-491d-adf5-a589b8b0499e" RegularExpression="^.{14} \w{12} 1E:E6B:色调反转:0.00:.{8}:瑠璃">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 神圣之白 1 7" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="色调反转" Id="6d35a7af-2414-4431-ad17-d5f9ac8750a0" RegularExpression="^.{14} \w{9} 1A:E6B:色调反转:9999.00:.{8}:瑠璃">
+            <Actions>
+              <Action OrderNumber="1" SystemBeepFreqExpression="http://127.0.0.1:2019/command" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 彗星之黑 1 7" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="天星棱光" Id="1a9ad579-f0fc-4792-a4e6-538117f67676" RegularExpression="">
+            <Actions />
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="星空彩绘" Id="e41446e9-6828-4b3b-b8ca-c9ccecf39a6e" RegularExpression="^.{14} \w{12} 15:.{8}:瑠璃:.+:星空彩绘">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 风景构想 1 5" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="星空构想" Id="095d7a1e-66c7-40ae-ab66-8560255b5aee" RegularExpression="^.{14} [a-zA-Z]+ 1[56]:.{8}:瑠璃:.+:星空构想">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 风景彩绘 1 5" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="17179869184" Id="c5119131-fd36-4052-985e-4ffc446fc083" Name="赤魔法师" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="回刺/魔回刺" Id="c7b7551e-9880-4cd2-921f-71e314b65704" RegularExpression="^.{14} \w{12} 15:.{8}:(?&lt;CasterName&gt;[^:]+?):(1D50|1D67)">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 交击斩 1 3" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 回刺 1 3" SoundRouting="None" TTSRouting="None" ActionType="GenericJson" ExecutionDelayExpression="20000">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="交击斩/魔交击斩" Id="55eb865f-951c-4aac-b58d-a0db85ef2c9c" RegularExpression="^.{14} \w{12} 15:.{8}:(?&lt;CasterName&gt;[^:]+?):(1D58|1D68)">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 连攻 1 3" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 回刺 1 3" SoundRouting="None" TTSRouting="None" ActionType="GenericJson" ExecutionDelayExpression="20000">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="连攻/魔连攻" Id="d9519a41-b0ef-43ff-9256-70900c38ae10" RegularExpression="^.{14} \w{12} 15:.{8}:(?&lt;CasterName&gt;[^:]+?):(1D5C|1D69)">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 回刺 1 3" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="三连重置" Id="206eb405-c12c-4ad5-b6a0-d5531455699c" RegularExpression="^.{14} \w{12} 15:.{8}:(?&lt;CasterName&gt;[^:]+?):(1D50|1D58|1D67|1D68)">
+            <Actions />
+            <Condition Enabled="false" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8589934592" Id="7e3a6fec-832d-48cd-9f4e-0daf738caa2a" Name="武士" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="燕回返" Id="c781a0ff-04dd-41b8-a4f9-1cdb6700c1d7" RegularExpression="^.{14} \w{12} 1E:.+:燕回返预备:0.00:.{8}:瑠璃">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 居合术 1 10" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="居合术" Id="1a05ea59-a06c-4f1d-bf8f-82a27f7c4c08" RegularExpression="^.{14} \w{9} 1A:.+:燕回返预备:30.00:.{8}:瑠璃">
+            <Actions>
+              <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 燕回返 1 10" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers>
+      <Trigger Enabled="true" Name="绘灵法师切职业重置" Id="5d7b3300-b1ad-4ded-a79a-98d28e3aad02" RegularExpression="^.{14} \w{7} .{8}:套装“绘灵法师”">
+        <Actions>
+          <Action OrderNumber="1" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 动物彩绘 1 8" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 武器彩绘 1 9" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" JsonEndpointExpression="http://127.0.0.1:2019/command" JsonPayloadExpression="/hotbar set 风景彩绘 1 5" SoundRouting="None" TTSRouting="None" ActionType="GenericJson">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
